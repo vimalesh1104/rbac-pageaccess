@@ -2236,17 +2236,17 @@ class PageaccessComponent {
         this.populatePage(action, true, null, pageConfig, fieldConfig, pageids);
     }
     populatePage(action, selected, event, pageConfig, fieldConfig, pageids) {
-        if (event) {
-            if (Array.isArray(event) && selected) {
-                this.permissionUpdatedPages = event.map(page => page.id);
-            }
-            else if (!Array.isArray(event) && selected) {
-                this.permissionUpdatedPages.push(event.id);
-            }
-            else {
-                this.permissionUpdatedPages = this.permissionUpdatedPages.filter(id => id !== event.id);
-            }
-        }
+        // if (event) {
+        //   if (Array.isArray(event) && selected) {
+        //     this.permissionUpdatedPages = event.map(page => page.id)
+        //   }
+        //   else if (!Array.isArray(event) && selected) {
+        //     this.permissionUpdatedPages.push(event.id);
+        //   }
+        //   else {
+        //     this.permissionUpdatedPages = this.permissionUpdatedPages.filter(id => id !== event.id);
+        //   }
+        // }
         const pageIds = this.rbacForm.get('pageList').value;
         const id = pageIds.map(key => key.id);
         let provideAccess = this.rbacForm.get('provideAccess').value;

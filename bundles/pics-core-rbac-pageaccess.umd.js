@@ -2975,17 +2975,17 @@
         };
         PageaccessComponent.prototype.populatePage = function (action, selected, event, pageConfig, fieldConfig, pageids) {
             var _this = this;
-            if (event) {
-                if (Array.isArray(event) && selected) {
-                    this.permissionUpdatedPages = event.map(function (page) { return page.id; });
-                }
-                else if (!Array.isArray(event) && selected) {
-                    this.permissionUpdatedPages.push(event.id);
-                }
-                else {
-                    this.permissionUpdatedPages = this.permissionUpdatedPages.filter(function (id) { return id !== event.id; });
-                }
-            }
+            // if (event) {
+            //   if (Array.isArray(event) && selected) {
+            //     this.permissionUpdatedPages = event.map(page => page.id)
+            //   }
+            //   else if (!Array.isArray(event) && selected) {
+            //     this.permissionUpdatedPages.push(event.id);
+            //   }
+            //   else {
+            //     this.permissionUpdatedPages = this.permissionUpdatedPages.filter(id => id !== event.id);
+            //   }
+            // }
             var pageIds = this.rbacForm.get('pageList').value;
             var id = pageIds.map(function (key) { return key.id; });
             var provideAccess = this.rbacForm.get('provideAccess').value;
