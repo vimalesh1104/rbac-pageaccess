@@ -3,7 +3,7 @@ import * as i0 from "@angular/core";
 export declare class PageAccessService {
     private _storeservice;
     isfull: boolean;
-    ishide: boolean;
+    hide: boolean;
     isread: boolean;
     isreadwrite: boolean;
     httpService: any;
@@ -48,17 +48,22 @@ export declare class PageAccessService {
     updateDuplicatesinArray(origArr: any[], updatingArr: any[]): any[];
     getMostFrequentEle(arr: any): string;
     getAccessArrayOnClick(pagesFromField: any, pageData: any, selectedFieldData: any, savedPageAccessPatching: any, existingValue: any): any;
+    getPageReadAccess(pageAccessValue: any): any;
+    getFieldReadAccess(fieldAccessValue: any): any;
+    getReadFormAccess(pageAccess: any): any;
     checkFieldLevelExist(fieldLevelExist: any, savedPageAccessPatching: any, pagesFromField: any, existingValue: any, i: any): any;
-    getAccess(access: any): any;
+    getAccess(access: any, fieldPageLevel: any): any;
     getOrganizationPage(orgId: any): any;
     getAssetByPageId(pId: any): any;
     createAsset(selectedAccess: any, selectedId: any, asset: any): any;
+    updateAssetOnDeselect(selectedAccess: any, selectedId: any, asset: any): any;
     getAssetById(selectedAccess: string, selectedId: any): any;
     getPolicyGroupPage(policygroupid: any): any;
     getDynamicPage(selectedAccess: any, selectedId: any): any;
     updateDynamicPage(selectedAccess: any, selectedId: any, pageData: any): any;
     createAccess(fieldLevelAccess: boolean, accessBy: string, payload: any, userId: any, roleId: any, policyId: any): any;
     getApplicationAccess(): any;
+    checkObjectType(schema: string, table: string): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<PageAccessService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<PageAccessService>;
 }

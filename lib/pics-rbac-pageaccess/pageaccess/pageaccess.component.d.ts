@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Injector, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AlertService } from '../@core/service/alert.service';
@@ -7,6 +7,7 @@ import { AuthService } from '../@core/service/auth.service';
 import { DataStoreService } from '../@core/service/data-store.service';
 import { PageAccessService } from '../@core/urls/page-access.service';
 import { RBACINFO } from '../@core/urls/rbac-url.config';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as i0 from "@angular/core";
 export declare class PageaccessComponent implements OnInit {
     private formBuilder;
@@ -18,6 +19,7 @@ export declare class PageaccessComponent implements OnInit {
     userList: any[];
     policyGroupData: any[];
     roleAddedData: any[];
+    dataLevelAccess: boolean;
     pageLevelAccess: boolean;
     multiPageAccess: boolean;
     fieldLevelAccess: boolean;
@@ -25,6 +27,7 @@ export declare class PageaccessComponent implements OnInit {
     subModuleList: any[];
     pageData: any[];
     pagesList: any[];
+    loadedPagesList: any[];
     selectedPageData: any[];
     fData: any[];
     moduleDropdownSettings: {};
@@ -53,6 +56,7 @@ export declare class PageaccessComponent implements OnInit {
     selectedRole: string;
     conditions: Array<any>;
     permissions: Array<any>;
+    dataAccess: Array<any>;
     showFieldValidity: boolean;
     pageAccessService: PageAccessService;
     orgSubs: Subscription;
@@ -66,6 +70,29 @@ export declare class PageaccessComponent implements OnInit {
     mergedAsset: any;
     httpService: any;
     permissionUpdatedPages: Array<any>;
+    fieldPageLevel: [];
+    fieldLevelCheckCount: any;
+    pagelevelaccesssavedisable: boolean;
+    pagelevelaccesscount: any;
+    selectedPages: Array<number>;
+    previousSelection: Array<number>;
+    isPageDeselectSave: boolean;
+    deselectedItemIds: Array<number>;
+    isRemoveAllFields: boolean;
+    deselectAssetIds: Array<number>;
+    enablesave: boolean;
+    pagelevelaccesscountdisable: boolean;
+    showFieldGrid: boolean;
+    getPageList: boolean;
+    disabledPages: Array<number>;
+    oldPageAccessValues: any[];
+    grantedPages: any[];
+    filterText: string;
+    filteredItems: any[];
+    selectedPageDataFilter: any;
+    additionalConditions: any;
+    private validationPopup;
+    modalService: NgbModal;
     constructor(injector: Injector, formBuilder: FormBuilder, cdRef: ChangeDetectorRef, _storeservice: DataStoreService, router: Router, alert: AlertService);
     ngOnInit(): void;
     ngOnDestroy(): void;
@@ -79,9 +106,11 @@ export declare class PageaccessComponent implements OnInit {
     getFallbackPermission(fAccess: any): any[];
     getSelectedPages(_selectedPages?: any, _pageConfig?: any, _assetconfig?: any): void;
     getGrantedPages(): void;
+    onFilterPages(event: any): void;
+    removeValue(e: any, item: any): void;
     onControlChanges(): void;
-    checkExistingGrantedPolicyPages(page: any, policyGroupPages: any): boolean;
-    checkExistingGrantedRolePages(page: any, RolePages: any): boolean;
+    checkExistingGrantedPolicyPages(rolePages: any, policyGroupPages: any): any;
+    checkExistingGrantedRolePages(policyPages: any, policyGroupRolePages: any): any;
     policyGroupCondition(data: any, policyGroup: any): void;
     getConfiguredAssetData(selectedAccess: any, selectedId: any): void;
     loadPages(tempPageData: any, action: any, pageids: any, pageConfig: any, fieldConfig: any): void;
@@ -89,7 +118,7 @@ export declare class PageaccessComponent implements OnInit {
     removeAllPopulatePage(): void;
     showLevelAccess(id: any): void;
     fPagesCheckLength(fpages: any, pageIds: any): void;
-    getPageLevelList(action?: any, pageConfig?: any): void;
+    getPageLevelList(action?: any, pageConfig?: any): Promise<void>;
     getVersionAccessArray(existSelectedPageId: any, pId: any, i: any, accessArray: any, pageName: any, setAccess: any, pageConfig: any): void;
     getPageAccessArray(pId: any, i: any, accessArray: any, pageName: any, setAccess: any, pageConfig: any): void;
     forActionClick(action: any, pId: any, accessArray: any): void;
@@ -119,8 +148,11 @@ export declare class PageaccessComponent implements OnInit {
     resetForm(id?: any, clear?: any): void;
     redirectList(): void;
     saveAccessPatching(): void;
-    changeFieldAccess(_index: any): void;
-    changePageAccess(index: any): void;
+    changeFieldAccess(_event: any, index: number, selectedPrivilege: string): void;
+    changePageAccess(index: any, selectedPrivilege: any): void;
+    setDefaultPageAccess(pageAccessData: FormArray, i: number): void;
+    checkObjectType(schema: string, table: string): Promise<unknown>;
+    showPopup(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PageaccessComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PageaccessComponent, "lib-pageaccess", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PageaccessComponent, "lib-pageaccess", never, {}, {}, never, never, false, never>;
 }

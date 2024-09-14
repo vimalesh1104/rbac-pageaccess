@@ -9,5 +9,5 @@ export declare class AlertComponent implements OnInit {
     removeAlert(alert: Alert): void;
     cssClass(alert: Alert): "alert alert-success" | "alert alert-danger" | "alert alert-info" | "alert alert-warning";
     static ɵfac: i0.ɵɵFactoryDeclaration<AlertComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlertComponent, "app-alert", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlertComponent, "app-alert", never, {}, {}, never, never, false, never>;
 }

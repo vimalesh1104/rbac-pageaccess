@@ -13,5 +13,5 @@ export declare class RbacPageaccessComponent implements OnInit {
     constructor(permissionStore: PermissionStore, _storeservice: DataStoreService);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RbacPageaccessComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RbacPageaccessComponent, "rbac-pageaccess", never, { "RBACORG": "RBACORG"; "PERMISSION": "PERMISSION"; "accessEvent": "accessEvent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RbacPageaccessComponent, "rbac-pageaccess", never, { "RBACORG": { "alias": "RBACORG"; "required": false; }; "PERMISSION": { "alias": "PERMISSION"; "required": false; }; "accessEvent": { "alias": "accessEvent"; "required": false; }; }, {}, never, never, false, never>;
 }

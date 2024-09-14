@@ -9,5 +9,5 @@ export declare class ShowFieldDirective implements OnInit {
     constructor(templateRef: TemplateRef<any>, viewContainer: ViewContainerRef, dataStore: PermissionStore);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ShowFieldDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ShowFieldDirective, "[showField]", never, { "showField": "showField"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ShowFieldDirective, "[showField]", never, { "showField": { "alias": "showField"; "required": false; }; }, {}, never, never, false, never>;
 }

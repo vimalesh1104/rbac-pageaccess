@@ -10,5 +10,5 @@ export declare class PermissionDirective implements AfterViewInit {
     constructor(renderer: Renderer2, elementRef: ElementRef, dataStore: PermissionStore);
     ngAfterViewInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PermissionDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<PermissionDirective, "[fieldKey]", never, { "fieldKey": "fieldKey"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<PermissionDirective, "[fieldKey]", never, { "fieldKey": { "alias": "fieldKey"; "required": false; }; }, {}, never, never, false, never>;
 }

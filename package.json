@@ -1,15 +1,15 @@
 {
   "name": "@pics-core/rbac-pageaccess",
-  "version": "1.0.1-OR.17",
+  "version": "1.0.1-OR.671",
   "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0",
-    "@angular/material": "^11.2.13",
-    "bootstrap": "^4.6.0",
-    "@angular/cdk": "^13.3.4",
+    "@angular/common": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "@angular/material": "^16.2.12",
+    "bootstrap": "^5.1.3",
+    "@angular/cdk": "^16.2.12",
     "primeflex": "^2.0.0",
     "primeicons": "^5.0.0",
-    "primeng": "^13.0.2",
+    "primeng": "^16.3.1",
     "rxjs": "~6.6.0",
     "quill": "^1.3.6"
   },
@@ -17,16 +17,27 @@
     "tslib": "^2.3.0"
   },
   "main": "bundles/pics-core-rbac-pageaccess.umd.js",
-  "module": "fesm2015/pics-core-rbac-pageaccess.js",
-  "es2015": "fesm2015/pics-core-rbac-pageaccess.js",
-  "esm2015": "esm2015/pics-core-rbac-pageaccess.js",
-  "fesm2015": "fesm2015/pics-core-rbac-pageaccess.js",
-  "typings": "pics-core-rbac-pageaccess.d.ts",
+  "module": "fesm2022/pics-core-rbac-pageaccess.mjs",
+  "es2022": "fesm2022/pics-core-rbac-pageaccess.js",
+  "esm2022": "esm2022/pics-core-rbac-pageaccess.js",
+  "fesm2022": "fesm2022/pics-core-rbac-pageaccess.js",
+  "typings": "index.d.ts",
   "sideEffects": false,
-  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.",
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.",
   "directories": {
     "lib": "lib"
   },
-  "author": "Abishkumar",
-  "license": "ISC"
+  "author": "JonesArnold",
+  "license": "ISC",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/pics-core-rbac-pageaccess.mjs",
+      "esm": "./esm2022/pics-core-rbac-pageaccess.mjs",
+      "default": "./fesm2022/pics-core-rbac-pageaccess.mjs"
+    }
+  }
 }

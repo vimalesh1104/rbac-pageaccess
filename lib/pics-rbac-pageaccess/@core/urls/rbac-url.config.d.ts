@@ -115,3 +115,10 @@ export declare class Environment {
     applicationid?: string;
     priority?: string;
 }
+export declare class DataBaseConfig {
+    static EndPoint: {
+        Database: {
+            checkObjectType: string;
+        };
+    };
+}

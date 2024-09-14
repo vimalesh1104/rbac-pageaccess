@@ -25,5 +25,5 @@ export declare class OrganizationDropdownComponent implements OnInit {
      */
     get displayCondn(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<OrganizationDropdownComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OrganizationDropdownComponent, "app-organization-dropdown", never, { "isShow": "isShow"; "Organization": "Organization"; }, { "changeOrganization": "changeOrganization"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OrganizationDropdownComponent, "app-organization-dropdown", never, { "isShow": { "alias": "isShow"; "required": false; }; "Organization": { "alias": "Organization"; "required": false; }; }, { "changeOrganization": "changeOrganization"; }, never, never, false, never>;
 }

@@ -46,5 +46,5 @@ export declare class ManageAccessRadioComponent implements OnInit, AfterViewChec
     resetForm(id?: any): void;
     getOrgPages(type: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageAccessRadioComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageAccessRadioComponent, "app-manage-access-radio", never, { "reloadForm": "reloadForm"; }, { "accessBy": "accessBy"; "policyDropdown": "policyDropdown"; "roleDropdown": "roleDropdown"; "userDropdown": "userDropdown"; "dropDownSelectedValues": "dropDownSelectedValues"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageAccessRadioComponent, "app-manage-access-radio", never, { "reloadForm": { "alias": "reloadForm"; "required": false; }; }, { "accessBy": "accessBy"; "policyDropdown": "policyDropdown"; "roleDropdown": "roleDropdown"; "userDropdown": "userDropdown"; "dropDownSelectedValues": "dropDownSelectedValues"; }, never, never, false, never>;
 }
